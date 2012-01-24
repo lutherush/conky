@@ -1,0 +1,75 @@
+##############################################
+#  Settings
+##############################################
+# -- Window specifications -- #
+
+background no
+update_interval 1.0
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+# -- Window specifications -- #
+
+own_window no
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+#border_width 3
+
+minimum_size 1024 744
+maximum_width 1024
+
+alignment top_left
+gap_x 0
+gap_y 0
+
+# -- Graphics settings -- #
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# -- Text settings -- #
+
+use_xft yes
+xftfont Aller:size=10
+xftalpha 0.8
+
+uppercase no
+
+default_color black
+default_shade_color black
+default_outline_color white
+
+total_run_times 0
+
+# -- Lua Load -- #
+
+lua_load ~/.conky/big/bigringv2.lua
+lua_draw_hook_pre ring_stats
+
+##############################################
+#  Output
+##############################################
+TEXT
+${alignc}Slackware${voffset -8}
+${hr 3}
+${alignc}${if_mpd_playing} ${hr}$mpd_artist$mpd_album${mpd_title 15}$mpd_status${mpd_bar 5,180}
+${execpi 1 ~/.conky/big/transmission.sh}
+
+
+
+

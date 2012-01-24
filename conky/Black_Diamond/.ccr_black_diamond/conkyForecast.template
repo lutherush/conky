@@ -1,0 +1,4 @@
+${voffset 5}${goto 40}[--datatype=DW --startday=1]${goto 130}[--datatype=DW --startday=2]${goto 220}[--datatype=DW --startday=3]${goto 310}[--datatype=DW --startday=4]
+${goto 40}${font ConkyWeather:size=28}[--datatype=WF --startday=1] ${goto 130}[--datatype=WF --startday=2]${goto 220} [--datatype=WF --startday=3]${goto 310} [--datatype=WF --startday=4]${font}
+${goto 40}[ --datatype=HT --startday=1 --hideunits --centeredwidth=3]/[ --datatype=LT --startday=1 --hideunits --centeredwidth=3]${goto 130}[ --datatype=HT --startday=2 --hideunits --centeredwidth=3]/[ --datatype=LT --startday=2 --hideunits --centeredwidth=3]${goto 220}[ --datatype=HT --startday=3 --hideunits --centeredwidth=3]/[ --datatype=LT --startday=3 --hideunits --centeredwidth=3]${goto 310}[ --datatype=HT --startday=4 --hideunits --centeredwidth=3]/[ --datatype=LT --startday=4 --hideunits --centeredwidth=3]
+

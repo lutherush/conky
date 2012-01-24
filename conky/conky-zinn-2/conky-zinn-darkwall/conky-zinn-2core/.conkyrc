@@ -1,0 +1,56 @@
+background no
+use_xft yes
+xftfont DejaVu Sans Bold:size=8
+xftalpha 0.5
+out_to_console no
+update_interval 1.0
+total_run_times 0
+draw_shades no
+draw_outline yes
+default_outline_color black
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+
+# If own_window is yes, you may use type normal, desktop or override
+own_window_type override
+
+# Use pseudo transparency with own_window?
+own_window_transparent yes
+
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+
+
+double_buffer yes
+default_color ffffff
+default_shade_color 000000
+alignment top_right
+gap_x 2
+gap_y 10
+no_buffers yes
+use_spacer right
+minimum_size 140 140
+
+#alternate clock background :
+#${voffset -130}${offset -6}${color 232323}${font Weather:size=130}JHGFD${color}${font}
+TEXT
+${color #4a7b9c}${alignc}${time %a %e %b %g}
+
+${color #4a7b9c}cpu1:${color }${cpu cpu1}%
+${offset 66}${voffset -13}${color #4a7b9c}cpu2:${color }${cpu cpu2}%
+${cpugraph cpu1 20,65 232323 4a7b9c}${cpugraph cpu2 20,65 232323 4a7b9c}
+
+${color #4a7b9c}mem:${color } $memperc%
+${membar 3,130 232323 4a7b9c}
+${color #4a7b9c}swap:${color } $swapperc%
+${swapbar 3,130 232323 4a7b9c}
+
+${color #4a7b9c}eth0 up: ${color }${upspeed eth0} k/s
+${upspeedgraph eth0 20,130 232323 4a7b9c}
+${color #4a7b9c}eth0 down: ${color }${downspeed eth0}k/s${color}
+${downspeedgraph eth0 20,130 232323 4a7b9c}
+${voffset -1}${offset -3}${color 232323}${font Weather:size=145}F${color}${font}
+${voffset -115}${alignc 50}${font zoraclockH:size=70}${color #4a7b9c}${execpi 20 ~/.scripts/clock.sh hour}${color}${font}
+${voffset -90}${alignc 70}${font zoraclockM:size=100}${color #4a7b9c}${execpi 20 ~/.scripts/clock.sh minute}${color}${font}
+${color #4a7b9c}${voffset -123}${offset 50}${font Sans:size=10}${time %k:%M}${color}${font}

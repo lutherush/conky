@@ -1,0 +1,85 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages 
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer yes
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=10
+xftalpha 0.8
+
+default_color white
+default_shade_color black
+default_outline_color black
+
+# Update interval in seconds
+update_interval 1
+
+# Minimum size of text area
+# minimum_size 250 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 10
+
+# border margins
+border_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+#default_color grey
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 30
+gap_y 40
+
+#
+#   ${font PizzaDude Bullets:size=16}v${font} Up: ${voffset -10}${upspeedgraph eth1 25,80}${offset 20}${voffset 2}${font PizzaDude Bullets:size=16}r${font} Down: ${voffset -10}${downspeedgraph eth1 25,80}$font}
+#
+#   ${font PizzaDude Bullets:size=16}M${font} Tot Up: ${totalup eth1}   ${voffset -8}${font PizzaDude Bullets:size=16}S${font} Tot Down: ${totaldown eth1}
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${font Ariel:bold:size=25}${alignc}${time %H:%M}${font}
+

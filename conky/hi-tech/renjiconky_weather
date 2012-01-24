@@ -1,0 +1,45 @@
+background no
+use_xft yes
+xftfont 123:size=7
+xftalpha 1
+update_interval 0.5
+total_run_times 0
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type override
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 0
+maximum_width 250
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 0e0e0e
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 10
+gap_y 700
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale yes
+use_spacer none
+text_buffer_size 512
+color1 590088
+
+TEXT
+${font jey:size=18}WEATHER${font 123:size=6}${alignr}............................................................
+${font Weather:size=40}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=WF}${font}${voffset -20} Temp: ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=HT}${color} ( ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=LT}${color} )${alignr}Humidity: ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=HM}${color}
+
+${alignr}${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=CC}${color}, wind speed is at ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=WS}${color},
+${alignr}with direction ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=WD}${color}. Visibility at ${color1}${execi 3600 conkyForecast --location=GRXX0019 --night --datatype=VI}${color}
+
+#${font 123:size=10}NEXT DAYS${font 123:size=7}${alignr}............................................................
+#${execi 3600 conkyForecast --location=GRXX0019 --datatype=DW --startday=1 --shortweekday --endday=2 --spaces=10}
+#${goto 4}${font Weather:size=20}${execi 3600 conkyForecast --location=GRXX0019 --datatype=WF --startday=1 --endday=2 --spaces=3}${font}
+#${goto 8}${execi 3600 conkyForecast --location=GRXX0019 --datatype=HT --startday=1 --endday=2 --spaces=8}
+

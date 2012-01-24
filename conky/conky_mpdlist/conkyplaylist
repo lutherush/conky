@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mpc --format '%time% %title%' playlist | \
+	sed -rn '/^>/,+9p' | \
+	sed -r 's/^[ >]+([0-9]+)\) (.*)/\1 \2/' | \
+	while read PLAYLISTPOS DURATION ITEMTITLE; do
+		printf "\${color0}%03d %s \${color}%.45s\n" "$PLAYLISTPOS" "$(echo $DURATION | sed -r 's/^([0-9]):(.*)/0\1:\2/')" "$ITEMTITLE"
+	done
+

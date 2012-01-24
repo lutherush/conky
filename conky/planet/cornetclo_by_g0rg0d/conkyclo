@@ -1,0 +1,64 @@
+# Conky settings #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+temperature_unit fahrenheit
+
+# Window specifications #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 300 600
+maximum_width 600
+
+alignment bm
+gap_x 35
+gap_y 55
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+
+uppercase no
+
+temperature_unit celsius
+
+
+default_color FFFFFF
+
+# Lua Load  #
+lua_load ~/scripts/clock.lua
+lua_draw_hook_pre clock_rings
+Text
+${voffset 320}${goto 120}${color 3399FF}${font Abode:size=18}${time %A} ${voffset -13}${color FFFFFF}${font Hybrid:size=39}${time %e}
+${goto 120}${color 3388FF}${voffset -42}${font Abode:size=25}${time %B} ${color FFFFFF}${voffset 4}${font Hybrid:size=16}${time %Y}
+
+
+
+
+
+${goto 128}${color 19A089}${voffset -100}${Font Hybrid:size=40}${time %I:%M}

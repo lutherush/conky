@@ -1,0 +1,21 @@
+STEP 1: copy the "monitor" and "NowPlaying" files into your home directory and rename them to something like ".conkyrc1" and ".conkyrc2"
+
+STEP 2: Edit .conkyrc1 (your monitor conky setup), scroll to the bottom of the file, you'll see an image directory. Be sure to point this to where you've saved my conky image "mail-and-other.png". This conky also uses the 'cure' font, part of the artwiz fonts package; make sure you have them installed or use a different font (if you use a different font, you'll need to edit the x and y offsets so it all fits nicely).
+
+STEP 3: Edit .conkyrc2 (your NowPlaying conky setup), scroll to the bottom of the file, you'll see an image directory. Be sure to point this to where you've saved my conky image "music.png". This conky also uses the 'cure' font, part of the artwiz fonts package; make sure you have them installed or use a different font (if you use a different font, you'll need to edit the x and y offsets so it all fits nicely).
+
+NOTE1: the monitor conky setup uses a gmail python script (included). Place this script in "/home/<your username>/.scripts/" and be sure to edit it as required. 
+
+NOTE2: the NowPlaying conky setup is designed to work with Banshee (script included). Place this script in "/home/<your username>/.scripts/".
+
+STEP 4: ensure that, if you use Compiz, it doesn't draw shadows around conky. Go to CompizConfig Settings Manager>Window Decorations and in the "Shadow Windows" field change the line to "(any) & !(class=Conky)", obviously minus the speech marks. 
+
+STEP 4a: See this thread her: http://ubuntuforums.org/showthread.php?p=8009406 to install the conkybanshee scripting for your OS.
+
+STEP 5: Everything should all be set. You can execute your monitor conky now, just Alt+F2 then enter "conky -c .conkyrc1" then the NowPlaying with "conky -c .conkyrc2". If you want to boot these automatically on startup, you can add them into Startup Applications; create new entries with commands used above. 
+
+STEP 6: ?????
+
+STEP 7: PROFIT!
+
+README courtesy of Izobalax 2009 http://izobalax.deviantart.com

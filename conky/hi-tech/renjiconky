@@ -1,0 +1,48 @@
+background no
+use_xft yes
+xftfont 123:size=7
+xftalpha 1
+update_interval 0.5
+total_run_times 0
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type override
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 250 0
+maximum_width 250
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 0e0e0e
+default_shade_color red
+default_outline_color green
+alignment top_right
+gap_x 10
+gap_y 300
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 1
+override_utf8_locale no
+use_spacer none
+text_buffer_size 512
+color1 590088
+
+TEXT
+${font jey:size=18}SYSTEM${font 123:size=6}${alignr}............................................................${font}
+Machine: ${goto 80}${color1}$USER${color} @ ${color1}$nodename ${color}${alignr}Uptime: ${color1}${uptime_short}${color}
+CPU 1 Usage: ${goto 80}${color1}${cpu cpu1}%${color}${alignr}CPU 2 Usage: ${color1}${cpu cpu2}%${color}
+RAM: ${goto 80}${color1}${memeasyfree}${color} / ${color1}${memmax}${color}${alignr}( ${color1}${memperc}% Used ${color})
+
+${font jey:size=18}DISKS${font 123:size=6}${alignr}............................................................${font}
+/ (root) ${alignc}${color1}${goto 70}${fs_free /}${color} / ${color1}${fs_size /}${color}${alignr}( ${color1}${fs_free_perc /}% Free${color} )
+$HOME ${alignc}${color1}${goto 70}${fs_free /home}${color} / ${color1}${fs_size /home}${color}${alignr}( ${color1}${fs_free_perc /home}% Free${color} )
+/home/Music ${alignc}${color1}${goto 70}${fs_free /home/Music}${color} / ${color1}${fs_size /home/Music}${color}${alignr}( ${color1}${fs_free_perc /home/Music}% Free${color} )
+${if_mounted /media/drone}/External ${alignc}${color1}${goto 70}${fs_free /media/drone}${color} / ${color1}${fs_size /media/drone}${color}${alignr}( ${color1}${fs_free_perc /media/drone}% Free${color} )${else}/External:${goto 70}${color1}Not Mounted.${color}${endif}
+
+${font jey:size=18}NETWORK${font 123:size=7}${alignr}............................................................${font}
+Download Speed: ${goto 105}${color1}${downspeed wlan0}${color} ${alignr}Total: ${color1}${totaldown wlan0}${color}
+Upload Speed: ${goto 105}${color1}${upspeed wlan0}${color} ${alignr}Total: ${color1}${totalup wlan0}${color}

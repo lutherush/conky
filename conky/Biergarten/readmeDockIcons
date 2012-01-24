@@ -1,0 +1,29 @@
+how to create a new icon
+
+first be sure you have installed the ge inspira fonts
+informations about ge inspira: http://en.wikipedia.org/wiki/GE_Inspira
+you can download it on devart: http://bozidar.deviantart.com/art/Infini8-Modern-Age-BETA-11272710  (the fonts are included in the package)
+
+
+in the icons folder there is a icon called "vorlage.svg"
+
+open this one with inkscape
+
+doubleclick on the large text and edit it to what you want
+click on the arrow at the top of the left toolbar
+
+center the text object
+
+click now on the large text again, but only once
+go to menu "path" an choose "object to path"
+
+press Strg+A (select all) and change the color to white (click on the "white" button in the bottom color bar)
+
+go to "save under" in the file menu or press ctrl+shift+s and give a name to your icon
+
+voila! :)
+
+
+
+how to expand awn
+go to gconf editor >> apps >> awn >> bar and enable expand_bar

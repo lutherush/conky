@@ -1,0 +1,5 @@
+You nee to adjust the path to the background image in the conkyrc file! --> ${image /home/yourname/.../conky-102-bg.png
+
+Place the conkyrc file with a dot (.) before the conkyrc (.conkyrc)as a hidden file directly in your personal folder (home directory)
+
+Install conky with your preferred package manager! Start conky (alt F2 or in a terminal and type conky)! 

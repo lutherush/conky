@@ -1,0 +1,9 @@
+this package includes the "Biergarten" gtk and emerald (GE Inspira and Freefonts) themes, and 2 packages "GE_Inspira" and "Freefonts"
+
+GE_Inspira:
+two conkys with a readme, the awn icons with a readme and the panel-menu button. so you can replace the menu button in your default icon theme
+
+Freefonts:
+the fonts, one conky with a readme, the awn icons with a readme and the panel-menu button. so you can replace the menu button in your default icon theme
+
+install the needed fonts first and make them usable with "sudo fc-cache" in terminal

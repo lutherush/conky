@@ -1,0 +1,58 @@
+# -- Conky settings -- #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+# -- Window specifications -- #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 1000 580
+maximum_width 1000
+
+alignment tl
+gap_x 10
+gap_y 10
+
+# -- Graphics settings -- #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# -- Text settings -- #
+use_xft yes
+xftfont sans:size=12
+xftalpha 0.8
+
+uppercase no
+
+default_color ffffff
+
+# -- Lua Load -- #
+lua_load ~/.conky/conky_widgets/conky_widgets.lua
+lua_draw_hook_pre widgets
+
+TEXT
+${goto 250}${font Journal:size=48}${time %A, %d %B %Y}${font}
+${goto 250}${voffset 25}${fs_bar 1,720 /}
+${goto 870}${voffset 80}CPU ${cpu}%
+${alignr 20}${voffset 80}MEM ${memperc}%
+${goto 870}${voffset 80}FS ${fs_used_perc /home}%
+${alignr 20}${voffset 80}BAT ${battery_percent BAT0}%

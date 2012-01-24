@@ -1,0 +1,69 @@
+
+
+alignment tl
+background 1
+double_buffer 1
+
+#Border
+border_inner_margin 5
+border_outer_margin 0
+border_width 0
+gap_x 547
+gap_y 295
+
+cpu_avg_samples 5
+diskio_avg_samples 10
+net_avg_samples 2
+update_interval 0.1
+update_interval_on_battery 5
+
+own_window 1
+own_window_transparent 1
+#own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual 1
+#own_window_argb_value 75
+#maximum_width 800
+#minimum_size 500 250
+draw_borders 0
+draw_graph_borders 0
+draw_outline 0
+draw_shades 0
+
+
+default_color F48248 
+default_bar_size 10 2
+default_outline_color 363636
+#default_shade_color 636363
+
+use_xft 1
+xftfont comic sans ms:size=10
+#uppercase 1
+format_human_readable 0
+short_units 1
+temperature_unit celsius
+
+lua_load ~/.conky/zub/zub.lua
+lua_draw_hook_pre ring_stats
+
+TEXT
+${voffset 110}${offset 160}${font fixed:size=8}${uptime}${font}
+${voffset 32}${offset 150}${battery}
+${voffset -187}${offset 85}$acpitemp°C
+${voffset 167}${offset 95}~mem: ${fs_free /home/mem}  #/home/mem is a tmpfs mountpoint.
+${voffset -85}${offset 315}${font fixed:size=8}${rss http:// 60 item_titles 5}${font}
+\
+${if_match ${upspeedf eth0}>5}${image .conky/up.png -p 250,140 -s 10x10}${endif}\
+${if_match ${downspeedf eth0}>5}${image .conky/down.png -p 260, 140 -s 10x10}${endif}\
+${if_match ${upspeedf wlan0}>5}${image .conky/up.png -p 270,140 -s 10x10}${endif}\
+${if_match ${downspeedf wlan0}>5}${image .conky/down.png -p 280, 140 -s 10x10}${endif}\
+${if_up eth0}${image .conky/wired.png -p 250,120 -s 20x20}${endif}\
+${if_up wlan0}${image .conky/wifi.png -p 270,120 -s 20x20}${endif}\
+${image .conky/rss.png -p 290,120 -s 20x20}\
+${image .conky/bat0chg.png -p 110,169}\
+${image .conky/cpu.png -p 80, 18 -s 25x25}\
+${image .conky/volume.png -p 230, 70}\
+${image .conky/harddisk.png -p 380, 90 -s 20x20}\
+${image .conky/usb.png -p 350, 90 -s 20x20}\
+${image .conky/usb.png -p 320, 90 -s 20x20}\
+${offset 500}

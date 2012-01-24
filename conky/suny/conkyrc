@@ -1,0 +1,54 @@
+#--- Conky by londonali1010 ---#
+
+background no
+net_avg_samples 2
+cpu_avg_samples 1
+no_buffers yes
+double_buffer yes
+update_interval 1
+
+own_window no
+own_window_type override
+own_window_class conky
+own_window_hints undecorated,skip_taskbar,skip_pager,sticky,below
+own_window_argb_visual yes
+#own_window_argb_value 100
+own_window_transparent yes
+
+
+border_inner_margin 0
+border_outer_margin 0
+default_color black
+color1 99a663
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+stippled_borders 0
+draw_outline no
+draw_shades no
+show_graph_scale no
+show_graph_range no
+
+use_xft yes
+xftfont Sawasdee:size=24
+xftalpha 0.8
+uppercase no
+
+minimum_size 1200 800
+#maximum_width 120
+use_spacer none
+alignment tr
+gap_x 0
+gap_y 0
+
+#${voffset 200}${goto 10}${time %B}${alignr 10}${time %Y}
+#${goto 10}${cpubar cpu3 1,260}
+#${goto 10}${font DejaVu Sans Mono:size=16}${execpi 60 DJS=`date +%_d`; cal | sed '1d' | sed '/./!d' | sed 's/$/                     /' | fold -w 21 | sed -n '/^.\{21\}/p' | sed 's/^/${goto #0} /' | sed /" $DJS "/s/" $DJS "/" "'${color1}'"$DJS"'${color}'" "/}
+#${goto 10}${cpubar cpu3 1,260}
+
+lua_load ~/.conky/suny/text.lua
+lua_draw_hook_pre load_text
+
+TEXT
+

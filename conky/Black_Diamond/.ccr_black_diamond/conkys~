@@ -1,0 +1,7 @@
+#!/bin/bash
+cd ~/.conkyair
+conky -c ~/.ccr_black_diamond/.conkycpu &
+conky -c ~/.ccr_black_diamond/.conkynet &
+conky -c ~/.ccr_black_diamond/.conkytime &
+conky -c ~/.ccr_black_diamond/.conkyx
+

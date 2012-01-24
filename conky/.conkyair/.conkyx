@@ -1,0 +1,42 @@
+use_xft yes
+xftfont Liberation Sans:size=8
+default_bar_size 200 2
+update_interval 1
+
+total_run_times 0
+double_buffer yes
+text_buffer_size 2048
+
+own_window yes
+own_window_colour 3D3D3D
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 500
+maximum_high 10
+
+
+default_color DDF2FF
+draw_borders no
+border_margin 10
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+color0 E6E6E6
+color1 A7CC5C
+color2 E6E6E6
+
+alignment top
+gap_x 500
+gap_y 30
+
+
+
+override_utf8_locale yes
+
+no_buffers yes
+
+TEXT
+${image ./pix/cad3.png  -s 435x162 -p 11,-2}${color1}${execp conkyExaile --template=~/.conkyair/.conkyExaile.template --nounknownoutput}

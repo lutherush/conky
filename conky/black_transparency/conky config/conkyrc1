@@ -1,0 +1,81 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Droid Sans:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_type override #override, default, conky, root
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_colour 000000
+
+#alignment bottom_left
+#alignment top_left
+alignment top_left
+gap_x  0  #660  #0      #0    #1115  #-95  #1115  #195  # 25 default
+gap_y  32  #5  #32   #29   #870  #870   #870    #40  # 40 default
+minimum_size 1920 33
+maximum_width 1920
+
+
+default_bar_size 160 4
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_graph_borders no
+draw_execbar_borders no
+
+default_color 777777 #212526
+
+color0  FFFFFF #1E1C1A
+color1  FFFFFF #1E1C1A
+color2  ffffff #FFFFFF #1E1C1A
+color3  777777 #ffffff   #239cd5   #2597cd
+
+TEXT
+#
+#
+#
+#
+${image ~/.conky_library/blue_sky/back.png -p 0,-4 -s 1920x50}
+####     ${image /home/slavcho/Desktop/mail.png -p 163,42 -s 24x24}
+#${if_match "${execpi 10 /home/slavcho/.conky_colors/conkycolors/scripts/conkyEmail.py --servertype=IMAP --servername=imap.googlemail.com -u "YOUR USERNAME" -p "YOUR PASSWORD" --ssl}" < "1"} ${image /home/slavcho/.mail.png -p 163,31 -s 24x24}  ${else} ${image /home/slavcho/.new.png -p 163,31 -s 24x24} $endif
+#
+#
+#
+#
+#
+# 
+#
+#
+#
+#
+#
+# 
+${voffset -20}
+${color3}   ${font Ubuntu:size=8}Kernel: ${font Ubuntu:size=8}${color2}${kernel} ${color3} |  ${font Ubuntu:size=8}Uptime: ${font Ubuntu:size=8}${color2}${uptime} ${color3} |  ${color3}${font Ubuntu:size=8}Users logon: ${font Ubuntu:size=8}${color2}$user_number ${color3} |  Processes: ${color2}${processes}  ${color3}|  Active: ${color2}${running_processes}  ${color3}|  ${font Ubuntu:size=8}Mail: ${font Ubuntu:size=8}${color2}${execpi 10 ~/.conky_library/blue_sky/conkyEmail.py --servertype=IMAP --servername=imap.googlemail.com -u "YOUR USERNAME" -p "YOUR PASSWORD" --ssl} ${color3} |  ${color3}${font Ubuntu:size=8}Home: ${color2}${font Ubuntu:size=8}${fs_free /home}/${font Ubuntu:size=8}${fs_size /home} - ${fs_free_perc /}% ${color3} free  |  ${color3}${font Ubuntu:size=8}Cpu1: ${color2}${font Ubuntu:size=8}${cpu cpu1}% ${cpugraph cpu1 10,50 777777 777777} ${color3} |  ${color3}${font Ubuntu:size=8}Cpu2: ${color2}${font Ubuntu:size=8}${cpu cpu2}% ${cpugraph cpu2 10,50 777777 777777} ${color3} |  ${color3}${font Ubuntu:size=8}Mem: ${color2}${font Ubuntu:size=8}${memperc}% ${memgraph mem 10,50 777777 777777} ${color3} |  ${color3}${font Ubuntu:size=8}Swap: ${color2}${font Ubuntu:size=8}${swapperc}% ${color3} |  Up: ${color2}${font Ubuntu:size=8}${upspeed eth0}/s ${upspeedgraph eth0 10,50 777777 777777} ${color3} |  Down: ${color2}${font Ubuntu:size=8}${downspeed eth0}/s ${downspeedgraph eth0 10,50 777777 777777} ${alignr}  ${color2}${exec ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=PP}%                                        
+   ${voffset 4}${font Ubuntu:size=8}${color3}Weather: ${color2}Now ${color3}${execpi 1800 conkyForecast --location=BUXX0002 --datatype=CT} ${execpi 1800 conkyForecast --location=BUXX0002 --datatype=HT --hideunits --centeredwidth=3}/${execpi 1800 conkyForecast --location=BUXX0002 --datatype=LT --hideunits --centeredwidth=3} | ${color2} ${execpi 1800 conkyForecast --location=BUXX0002 --datatype=DW --startday=1 --shortweekday} ${color3}${execpi 1800 conkyForecast --location=BUXX0002 --datatype=CT --startday=1 --shortweekday} ${execpi 1800 conkyForecast --location=BUXX0002 --datatype=HT --startday=1 --hideunits --centeredwidth=3}/${execpi 1800 conkyForecast --location=BUXX0002 --datatype=LT --startday=1 --hideunits --centeredwidth=3} | ${color2} ${execpi 1800 conkyForecast --location=BUXX0002 --datatype=DW --startday=2 --shortweekday} ${color3}${execpi 1800 conkyForecast --location=BUXX0002 --datatype=CT --startday=2 --shortweekday} ${execpi 1800 conkyForecast --datatype=HT --startday=2 --hideunits --centeredwidth=3}/${execpi 1800 conkyForecast --datatype=LT --startday=2 --hideunits --centeredwidth=3} | ${color2} ${execpi 1800 conkyForecast --datatype=DW --startday=3 --shortweekday} ${color3}${execpi 1800 conkyForecast --location=BUXX0002 --datatype=CT --startday=3 --shortweekday} ${execpi 1800 conkyForecast --datatype=HT --startday=3 --hideunits --centeredwidth=3}/${execpi 1800 conkyForecast --datatype=LT --startday=3 --hideunits --centeredwidth=3} | ${color2} ${execpi 1800 conkyForecast --datatype=DW --startday=4 --shortweekday} ${color3}${execpi 1800 conkyForecast --location=BUXX0002 --datatype=CT --startday=4 --shortweekday} ${execpi 1800 conkyForecast --datatype=HT --startday=4 --hideunits --centeredwidth=3}/${execpi 1800 conkyForecast --datatype=LT --startday=4 --hideunits --centeredwidth=3}  |  Cal: ${execp ~/.conky_library/blue_sky/calendar.sh} | ${color3} Date:${color2} ${time %d} ${time %B} ${time %Y}, ${time %A} ${color3} |  Clock: ${color2}${time %H}:${time %M} ${color3}    ${alignr} ${color3}${font Ubuntu:size=8}Time: ${color2}${exec ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=PT} / ${exec ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=LE}  ${color3}Year: ${color2}[${exec ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=YR}]  ${color3}Genre: ${color2}${execbar ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=GE}  ${color3} Volume: ${color2}${exec ~/.conky_library/blue_sky/conkyRhythmbox.py --datatype=VO}%                                        
+#
+#
+# BACK UP -put before alignr on second row ...   |  Quote: ${font Ubuntu:size=8}${rss http://quotes4all.net/rss/540010110/quotes.xml 10 item_desc 0 }${color2}  ~~~  ${rss http://quotes4all.net/rss/540010110/quotes.xml 10 item_title 0 }

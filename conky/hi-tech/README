@@ -1,0 +1,25 @@
+1) Place the fonts provided inside the folder at the location "/usr/share/fonts/truetype/custom/"
+	Then, recreate the cache with the command "sudo fc-cache -fv"
+
+2) The conky script uses 2 python scripts from the conkyhardcore PPA
+	You should install those 2 scripts in order to use conky Weather and conky e-mail
+	
+	a) First add the PPA with the command "sudo add-apt-repository ppa:conkyhardcore/ppa"
+	b) "sudo apt-get update" then "sudo apt-get install conkyemail conkyforecast"
+
+3) Edit the .conkyForecast.config inside the folder and change "XOAP_PARTNER_ID", "XOAP_LICENCE_KEY" and "LOCALE"
+	The Key and the ID you can obtain it by registering at "http://www.weather.com"
+	Change the Location ID at the renjiconky_weather too
+
+4) Edit renjiconky_other and replace the --server --username --password with you details about the mailservice you use.
+
+5) Add startconky to Sturtup Applications (the command is "bash /home/<USER>/startconky" )
+
+6) Enjoy!
+
+PS: Hope i didnt forget anything. If so, plz tell me :)
+PS2: I case u want to share - redistribute, let me know first.
+
+
+
+-	Renji

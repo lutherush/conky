@@ -1,0 +1,49 @@
+use_xft yes
+xftfont Verdana:style=bold:size=15
+default_bar_size 100 5
+update_interval 1
+
+total_run_times 0
+double_buffer yes
+text_buffer_size 2048
+
+own_window yes
+own_window_colour 3D3D3D
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 400 200
+
+
+
+default_color FFFFFF
+draw_borders no
+border_margin 10
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+color0 E6E6E6
+color1 A7CC5C
+color2 E6E6E6
+
+alignment top_right
+gap_x 5
+gap_y 400
+
+
+
+override_utf8_locale yes
+
+no_buffers yes
+
+TEXT
+${image ./pix/wlanbg2.png  -s 406x164 -p -5,0}
+${offset 15}${alignc}${execp ~/.conkyair/wlanscript.sh}
+${voffset -35}${alignc -20}SSID: ${wireless_essid wlan0}
+${alignc -20}Bitrate: ${wireless_bitrate wlan0}
+${alignc -20}Local: ${addr wlan0}
+${alignc -20}Public: ${execi 300 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
+${voffset -25}${offset 25}${wireless_link_qual wlan0}%
+

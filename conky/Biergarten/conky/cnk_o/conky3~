@@ -1,0 +1,53 @@
+## Conky
+background yes
+out_to_console no
+top_cpu_separate yes
+max_port_monitor_connections 256
+cpu_avg_samples 1
+net_avg_samples 1
+update_interval 1
+
+# Text	
+uppercase no
+override_utf8_locale yes
+font Bitstream Charter:style=Regular
+use_xft yes
+xftfont Vibrocentric:size=10
+
+# Window
+own_window yes
+own_window_class Conky
+own_window_transparent true
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_type normal
+own_window_colour 111111
+
+# Grafik
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_shades no
+draw_outline no
+
+# Layout
+alignment top_left
+gap_x 520
+gap_y 480
+#maximum_width 200
+minimum_size 170,500
+
+# Farben
+color1 ffffff #dunkelgrau
+color2 ffffff #hellgrau
+color3 ffffff #blau
+color7 00ff00 #grün
+color8 ffff00 #gelb
+color9 ff0000 #rot
+default_shade_color CACACA # schwarz ;)
+default_outline_color bbbbbb
+default_color ffffff # weiß ;)
+
+# Ab hier beginnt der Anzeigeteil
+TEXT
+${color3}${font GE Inspira:bold:size=34}${voffset 12}${time %d}${color1}${font GE Inspira:bold:size=20}${voffset -11}${offset 6}${time %B}
+${color1}${font GE Inspira:bold:size=34}${voffset 8}${time %A}

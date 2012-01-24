@@ -1,0 +1,28 @@
+#!/bin/bash
+#Version 1.0
+
+##### Mise en page du calendrier dans conky #############
+#                                                       #
+# . Calendrier sur 2 lignes                             #
+# . Défilement horizontal                               #
+#                                                       #
+#                                       Par Fenouille84 #
+#########################################################
+
+#Définit le jour d'aujourd'hui
+jour=$(date +%e)
+
+#Mise en page du calendrier
+cal=$(cal | sed -e "1,2d ; s/^ *//g ; s/  / /g ; s/ /\n/g ; /^$/d" | sed '1,9 s/^/0/g' | tr '\n' ' ' | sed 's/'"$jour"'/\n'"$jour"'\${color7}/1' | sed '1d' | fold -sw 28 | sed '1,2!d')
+
+#Affichage du calendrier + mise en page selon le jour
+if [ "$jour" -le 9 ]
+ then echo "0$cal"| sed 's/^/${offset 1125}/g'
+
+ elif [ "$jour" -le 25 ]
+ then echo "$cal"  | sed 's/^/${offset 1125}/g'
+
+ else echo "$cal"  | sed 's/^/${offset 1125}/g' ; echo ""
+fi
+
+exit 0

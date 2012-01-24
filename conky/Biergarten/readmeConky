@@ -1,0 +1,36 @@
+there are two conky packages inside
+
+1)the older, white one, "cnk_w"
+
+2)and my the one from preview, with "overlap" clock, cnk_o
+
+both folders include startscripts, please change the path to conkysettingsfiles
+
+
+if you don´t use mpd or a laptop, please change conky4 or delete it from your startscript
+
+
+you need the font "GE Inspira", cause all is formatted for this font
+but i can´t put it in the pack, it isn´t a free font :(
+
+with other fonts, you have to change the conky formatting settings
+
+informations about ge inspira: http://en.wikipedia.org/wiki/GE_Inspira
+but you can download it on devart: http://bozidar.deviantart.com/art/Infini8-Modern-Age-BETA-11272710  (the fonts are included in the package)
+
+
+to use some transparency in conky text (necessary for the overlap clock!), you need compiz...and you have to change some compiz settings:
+
+in ccsm:
+opacity>new>window class: class=Conky (NOT "conky"!!!)...and than choose a value, for the overlap clock i recommend 50-55%
+window decoration > shadows: !(class=Conky)		=no conky shadows
+window rules > not moveable: class=Conky		=provides conky windows from being moved with alt+button1
+window rules > not closeable: class=Conky		=provides conky from being closed with the mousewheel
+ accidentally
+
+if you don´t want to have transparency, you can set conky from own_window_type "normal" to "override"
+with "override", compiz has no influence on conky! so you don´t must change the ccsm settings
+
+i hope my english is well enough to understand what i want to say :)
+
+and i hope, i forgot nothing...if you have any questions, plz ask

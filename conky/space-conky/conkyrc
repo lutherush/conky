@@ -1,0 +1,64 @@
+##################################################
+##################################################
+##												##
+##					Settings					##
+##												##
+##################################################
+##################################################
+background yes
+update_interval 1.0
+double_buffer yes
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+text_buffer_size 2048
+imlib_cache_size 0
+override_utf8_locale yes
+
+
+# +++++ Window +++++
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_class conky
+on_bottom yes
+own_window_title rings + text widgets
+own_window_title text widget v1.2
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 170 600
+
+alignment ml
+gap_x 0
+gap_y 0
+
+
+# +++++ Styles +++++
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+
+# +++++ Colors +++++
+default_shade_color 000000
+default_color ffffff
+
+#++++Put here the correct paths to call the lua scripts++++++++
+
+lua_load ~/.conky/space-conky/aros.lua
+lua_load ~/.conky/space-conky/texto.lua
+lua_draw_hook_pre main_rings
+lua_draw_hook_post draw_text
+
+# +++++ Font +++++
+use_xft yes
+xftfont DROID sans:size=6
+xftalpha 0.1
+uppercase no
+
+TEXT
+

@@ -1,0 +1,140 @@
+background no
+update_interval 1.0
+double_buffer yes
+no_buffers yes
+cpu_avg_samples 2
+net_avg_samples 2
+text_buffer_size 2048
+imlib_cache_size 0
+override_utf8_locale yes
+
+#mpd
+mpd_host exelero
+mpd_port 6600
+
+
+# +++++ Window +++++
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 1280 800
+maximum_width 1280
+
+alignment bottom_middle
+gap_x 0
+gap_y 0
+
+
+# +++++ Styles +++++
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+
+# +++++ Colors +++++
+default_shade_color 101010
+default_color 8F8F8F
+
+lua_load ~/.conky/desktop_conky/desktopconky.lua
+
+# +++++ LUA +++++
+lua_draw_hook_pre ring_stats
+
+
+# +++++ Font +++++
+use_xft yes
+xftfont DejaVu Sans:size=7
+xftalpha 0.1
+uppercase no
+
+
+TEXT
+
+
+
+${goto 1137}CPU2
+
+
+${goto 1072}DATA
+
+${goto 1025}SWAP
+
+${goto 990}UP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+${if_mpd_playing}${alignc}${mpd_title 100}
+${alignc}$mpd_artist
+${alignc}$mpd_album
+${alignc}$mpd_elapsed/$mpd_length
+${alignc}${mpd_bar 5,180}
+${alignc}${uptime}
+
+
+${goto 322}DOWN
+
+${goto 290}RAM
+
+
+${goto 245}ROOT
+
+
+
+${goto 190}CPU1
+
+${else}
+
+
+
+
+${alignc}${uptime}
+
+
+${goto 322}DOWN
+
+${goto 290}RAM
+
+
+${goto 245}ROOT
+
+
+
+${goto 190}CPU1${endif}

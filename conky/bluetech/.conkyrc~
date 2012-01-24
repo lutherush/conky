@@ -1,0 +1,74 @@
+#avoid flicker
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent yes
+own_window_type root
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager 
+
+#borders
+draw_borders no
+border_margin 1
+
+#shades
+draw_shades no
+
+#position
+gap_x 6
+gap_y -9
+alignment bottom_right
+
+#behaviour
+update_interval 1
+
+#colour
+default_color  FFFFFF
+color1 184880
+color2 FFFFFF
+color3 333333
+color4 508ed8
+
+#default_shade_color 000000
+own_window_colour 3d352a
+
+#font
+use_xft yes
+xftfont AvantGarde:pixelsize=11
+uppercase no
+
+#to prevent window from moving
+use_spacer no
+minimum_size 175
+
+#email line
+#${color2}${alignr}EMAIL:${color1} ${execi 300 python ~/.scripts/gmail.py}
+
+#mpd line
+#${color2}${alignr}NOW PLAYING: ${color1}${mpd_smart}
+
+
+#mpd
+mpd_host localhost
+mpd_port 6600
+
+
+
+TEXT
+
+${color2}${alignr 100}${font Openlogos:pixelsize=80}q${font}
+${color2}${alignr}TIME:${color1} ${time %I:%M %P}
+${color2}${alignr}UPTIME:${color1} ${uptime}
+${color2}${alignr}DATE: ${color1}${time %a %d %b %Y}
+${color2}${alignr}KERNEL: ${color1}$kernel
+${color2}${alignr}LOCAL IP: ${color1}${addr wlan0}
+${color2}${alignr}PUBLIC IP: ${color1}${execi 1 ~/.scripts/ip.sh}
+${color2}${alignr}UP: ${color1}${upspeed wlan0}/s ${color3}${upspeedgraph wlan0 4,60 000000 000000}
+${color2}${alignr}DOWN: ${color1}${downspeed wlan0}/s ${color3}${downspeedgraph wlan0 4,60 000000 000000}
+${color2}${alignr}ROOT: ${color4}${fs_used_perc /}%  ${color3}${fs_bar 4,60 /}
+${color2}${alignr}SHARED: ${color4}${fs_used_perc /media/shared}%  ${color3}${fs_bar 4,60 /media/shared}
+${color2}${alignr}STORAGE: ${color4}${fs_used_perc /media/storage}%  ${color3}${fs_bar 4,60 /media/storage}
+${color2}${alignr}CPU1 2.80 GHz: ${color4}${cpu cpu1}%  ${color3}${cpubar cpu1 4,60}
+${color2}${alignr}CPU2 2.80 GHz: ${color4}${cpu cpu2}%  ${color3}${cpubar cpu2 4,60}
+${color2}${alignr}RAM: ${color1}$mem/$memmax ${color4}$memperc% ${color3}${membar 4,60}
+${color2}${alignr}NOW PLAYING: ${color1}${execi 3 ~/.scripts/clem.sh}${mpd_smart}

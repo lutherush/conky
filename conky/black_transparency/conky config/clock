@@ -1,0 +1,59 @@
+c######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Droid Sans:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_type override #override, default, conky, root
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_colour 000000
+
+
+alignment bottom_right
+gap_x  0  #660  #0      #0    #1115  #-95  #1115  #195  # 25 default
+gap_y 0  #5  #32   #29   #870  #870   #870    #40  # 40 default
+minimum_size 80 30
+maximum_width 80
+
+
+default_bar_size 160 3
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_graph_borders no
+draw_execbar_borders no
+
+default_color F3F3F3 #212526
+
+
+color3  ffffff #ffffff   #239cd5   #2597cd
+
+TEXT
+#
+${color3}${font Arial Black:size=18}${time %H}${time :%M}#${time :%S}
+${voffset -50}
+#${font Arial Black:size=8}${time %A}
+#${font Arial Black:size=8}${time %d %b %Y}
+#

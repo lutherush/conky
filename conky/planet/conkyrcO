@@ -1,0 +1,125 @@
+#Fonctionnement de conky 
+  total_run_times 0			#Temps en secondes ; 0 = toujours actif
+  background yes			#Pour que conky tourne en arrière plan ; no = pour les tests
+
+#Réglages système
+  cpu_avg_samples 1			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+  net_avg_samples 2			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+
+#Mémoire
+  double_buffer yes			#Éviter le clignotement
+  no_buffers yes			#Soustraire les mémoires tampons de la mémoire utilisée
+  text_buffer_size 1024			#Taille du cache pour le texte
+
+#Affichage
+  out_to_console no			#Affiche le texte sur la sortie standard
+  update_interval 1			#Taux de rafraîchissement de la fenêtre (s)
+
+#Fenêtre conky
+  alignment top_left			#Alignement
+ #---
+  minimum_size 1244 10			#Taille minimum (px) ; largeur / hauteur
+  maximum_width 1244			#Largeur maximum (px)
+ #---
+  gap_x 95				#Écart avec le bord gauche / droit
+  gap_y 55				#Écart avec le bord haut / bas
+ #---
+  draw_shades no			#Afficher les ombres
+  draw_outline no			#Afficher les contours de fenêtre
+  draw_borders no			#Afficher des contours autour des blocs de texte
+  border_width 1			#Largeur du contour
+  border_inner_margin 1			#Largeur des marges
+ #---
+  own_window yes			#Utiliser sa propre fenêtre
+  own_window_type override		#Type de fenêtre ; normal / override / desktop
+  own_window_transparent yes		#Pseudo transparence
+
+#Mise en forme
+  use_xft yes				#Utiliser Xft (polices lissées etc)
+  xftalpha .1				#Utiliser Xft
+  override_utf8_locale yes 		#Force l'UTF8
+  uppercase no				#Tout le texte en majuscule
+  use_spacer right			#Ajoute des espaces après certains objets (qu'avec des polices fixes)
+ #---
+  xftfont saxMono:size=9 		#Police par défaut
+ #---
+  stippled_borders 5			#Taille des pointillés
+
+#Couleurs
+  default_color FFFFFF 			#Couleur par défaut
+  default_shade_color 333333		#Couleur des ombres
+  default_outline_color black		#Couleur des contours
+ #---
+  color1 476ab1				#Bleu clair
+  color2 5e681c				#Vert
+  color3 bd5e27				#Orange
+  color4 982615				#Rouge
+  color5 854e85				#Mauve
+  color6 3f6f88				#Bleu-vert
+  color7 3e494d				#Gris
+ #---
+  short_units yes			#Unités courtes
+  pad_percents 2			#Unité à 2 décimales
+
+
+TEXT
+${color1}${font Vertigo 2 BRK:size=8}${offset 14}${cpubar cpu6 34,1}${voffset -42}
+U
+P
+C${font}${voffset -37}
+${offset 18}Core1:${cpu cpu1}%${goto 105}${platform coretemp.0 temp 1}${offset -8}°C
+${offset 18}Core2:${cpu cpu2}%${goto 105}${platform coretemp.1 temp 1}${offset -8}°C
+${offset 18}${cpubar cpu0 6,123}
+${voffset -56}
+${color2}${font Vertigo 2 BRK:size=8}${offset 172}${cpubar cpu6 34,1}${voffset -42}
+${offset 158}M
+${offset 158}E
+${offset 158}M${font}${voffset -37}
+${offset 176}RAM :${memperc}% / ${memmax}
+${offset 176}Swap:${swapperc}% / ${swapmax}
+${offset 176}${membar 6,123}
+${voffset -56}
+${color3}${font Vertigo 2 BRK:size=8}${offset 331}${cpubar cpu6 34,1}${voffset -42}
+${offset 317}T
+${offset 317}E
+${offset 317}N${font}${voffset -37}
+${offset 335}TP:${if_existing /proc/net/route wlan0}${gw_iface}${goto 426}${wireless_link_qual_perc wlan0}${offset -21}%${else}--${goto 426}0 %${endif}
+${offset 335}UL:${upspeed wlan0}${goto 426}${totalup wlan0}
+${offset 335}DL:${downspeed wlan0}${goto 426}${totaldown wlan0}
+${voffset -56}
+${color1}${font Vertigo 2 BRK:size=8}${offset 489}${cpubar cpu6 34,1}${voffset -42}
+${offset 475}D
+${offset 475}D
+${offset 475}H${font}${voffset -37}
+${offset 493}Temp:${hddtemp /dev/sda}${offset -7}°C
+${offset 493}root:${fs_bar 6,47 /} ${fs_free /}
+${offset 493}home:${fs_bar 6,47 /home} ${fs_free /home}
+${voffset -56}
+${color4}${font Vertigo 2 BRK:size=8}${offset 647}${cpubar cpu6 34,1}${voffset -42}
+${offset 633}B
+${offset 633}S
+${offset 633}U${font}${voffset -37}
+${offset 651}Lexar:${if_mounted /media/LEXAR}${fs_bar 6,40 /media/LEXAR} ${fs_free /media/LEXAR}${else}unmt device${endif}
+${offset 651}Linux:${if_mounted /media/Linux}${fs_bar 6,40 /media/Linux} ${fs_free /media/Linux}${else}unmt device${endif}
+${offset 651}LaCie:${if_mounted /media/LaCie_PC}${fs_bar 6,40 /media/LaCie_PC} ${fs_free /media/LaCie_PC}${else}unmt device${endif}
+${voffset -56}
+${color1}${font Vertigo 2 BRK:size=8}${offset 805}${cpubar cpu6 34,1}${voffset -42}
+${offset 791}S
+${offset 791}Y
+${offset 791}S${font}${voffset -37}
+${offset 809}OpBx:${exec openbox --version | head -n1 | cut -d ' ' -f2}
+${offset 809}Krnl:${exec uname -r | cut -c 1-9}
+${offset 809}Uptm:${uptime}
+${voffset -56}
+${color5}${font Vertigo 2 BRK:size=8}${offset 963}${cpubar cpu6 34,1}${voffset -42}
+${offset 949}L
+${offset 949}D
+${offset 949}T${font}${voffset -37}
+${execp head -n3 $HOME/Ubuntu/ToDo/ToDo | fold -sw 17 | sed 's/^/${offset 967}/g'}
+${voffset -56}
+${color6}${font Vertigo 2 BRK:size=8}${offset 1121}${cpubar cpu6 34,1}${voffset -42}
+${offset 1107}L
+${offset 1107}A
+${offset 1107}C${font}${voffset -37}
+${offset 1125}${exec date +%a | head -c2 | sed 's/^.\| [a-z]/\U&/g'}${alignr}${exec date +%B\ %Y | sed 's/^.\| [a-z]/\U&/g'}
+${execp $HOME/conky/conkycal}

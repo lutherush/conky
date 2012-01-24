@@ -1,0 +1,15 @@
+Conky Bargraph made by Mario Zamora
+Site: http://malbzamora.deviantart.com/
+
+Instructions to install
+
+1.- You need have installed Conky 1.8+
+2.- Set the correct path on the conkyrc file for the "barras.lua" script
+3.- Set the start.sh file to be loaded on the autostart of your system (this depends of your distro)
+4.- You need have installed the two fonts added with this package
+
+License: GPL3
+
+Thanks to wlourf for the lua/cairo scripts
+
+Enjoy and improve it!

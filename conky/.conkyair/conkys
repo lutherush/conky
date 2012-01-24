@@ -1,0 +1,7 @@
+#!/bin/bash
+cd ~/.conkyair
+conky -c ~/.conkyair/.conkycpu &
+conky -c ~/.conkyair/.conkynet &
+conky -c ~/.conkyair/.conkytime &
+conky -c ~/.conkyair/.conkyx
+

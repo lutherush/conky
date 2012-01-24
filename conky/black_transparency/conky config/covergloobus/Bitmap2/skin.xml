@@ -1,0 +1,20 @@
+<skin    name="bitmap"       width="615"    height="145">
+  <image src="case.png"    x="0"   y="70"  width="615"  height="105"/>
+  <albumname                x="138"  y="75"  width="280" align="center" maxchars="20" font="Ubuntu 8" color="#777777ff"/>   
+<artistname 	            x="82"  y="75" width="280" maxchars="20" align="left" font="Ubuntu 8" color="#777777ff"/>
+<titlename                x="213"  y="75"  width="280" maxchars="20" align="right" font="Ubuntu 8" color="#777777ff"/>  
+<albumcover x="500" y="0" width="110" height="110"/>
+<rating			x="210" y="30" width="17" height="18" spacing = "3" star="star.png" nostar="nostar.png" />
+<playercontrols spacing="0" x="0" y="180">
+     <prev 			x="369"  y="95" src="prev.png"/> 
+     <play		 	x="415" y="95" src="pause.png"/> 
+	 <next 			x="459" y="95"	src="next.png"/> 
+  </playercontrols>    
+
+ <seekbar x="315" y="40" width="155" height="1" back="seek_bg.png">
+   	<thumb src="seek_top.png" width="12" height="1" left="0" top="0" bottom="-12"/>
+ </seekbar>
+
+</skin>
+
+

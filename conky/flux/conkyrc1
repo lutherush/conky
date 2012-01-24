@@ -1,0 +1,97 @@
+#Fonctionnement de conky 
+  total_run_times 0			#Temps en secondes ; 0 = toujours actif
+  background yes			#Pour que conky tourne en arrière plan ; no = pour les tests
+
+#Réglages système
+  cpu_avg_samples 1			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+  net_avg_samples 2			#Nb d'échantillons pour calculer la moyenne d'utilisation CPU
+
+#Mémoire
+  double_buffer yes			#Éviter le clignotement
+  no_buffers yes			#Soustraire les mémoires tampons de la mémoire utilisée
+  text_buffer_size 1024			#Taille du cache pour le texte
+
+#Affichage
+  out_to_console no			#Affiche le texte sur la sortie standard
+  update_interval 1			#Taux de rafraîchissement de la fenêtre (s)
+
+#Fenêtre conky
+  alignment top_left			#Alignement
+ #---
+  minimum_size 130 10			#Taille minimum (px) ; largeur / hauteur
+  maximum_width 130			#Largeur maximum (px)
+ #---
+  gap_x 5				#Écart avec le bord gauche / droit
+  gap_y 5				#Écart avec le bord haut / bas
+ #---
+  draw_shades no			#Afficher les ombres
+  draw_outline no			#Afficher les contours de fenêtre
+  draw_borders no			#Afficher des contours autour des blocs de texte
+  border_width 1			#Largeur du contour
+  border_inner_margin 1			#Largeur des marges
+ #---
+  own_window yes			#Utiliser sa propre fenêtre
+  own_window_type override 		#Type de fenêtre ; normal / override / desktop
+  own_window_transparent yes		#Pseudo transparence
+
+#Mise en forme
+  use_xft yes				#Utiliser Xft (polices lissées etc)
+  xftalpha .1				#Utiliser Xft
+  override_utf8_locale yes 		#Force l'UTF8
+  uppercase no				#Tout le texte en majuscule
+  use_spacer right			#Ajoute des espaces après certains objets (qu'avec des polices fixes)
+ #---
+  xftfont saxMono:size=9 		#Police par défaut
+ #---
+  default_bar_size 130 3			#Barre par défaut (longeur hauteur)
+  stippled_borders 5			#Taille des pointillés
+
+#Couleurs
+  default_color FFFFFF 			#Couleur par défaut
+  default_shade_color 333333		#Couleur des ombres
+  default_outline_color black		#Couleur des contours
+ #---
+  color1 303030				#Gris
+  color2 D6D6D6				#Argenté
+
+ #---
+  short_units yes			#Unités courtes
+  pad_percents 2			#Unité à 2 décimales
+
+#Prise en charge du LUA
+  #lua_load ~/.conky/flux/bg.lua
+  #lua_draw_hook_pre draw_bg
+
+
+
+TEXT
+${color2}${execbar $HOME/Script/Volume}${color1}${offset -130}${execbar echo "0"}
+${color1}${font Vertigo 2 BRK:size=8}${offset 14}${color2}${cpubar cpu6 34,1}${color1}${voffset -42}
+S
+Y
+S${font}${voffset -37}
+${offset 18}\#1  ${cpu cpu1}%${goto 83}\#2  ${cpu cpu2}%${voffset -2}
+${offset 18}${color2}${cpugraph cpu1 19,50}${color1}${offset -50}${cpugraph cpu6 19,50}${goto 83}${color2}${cpugraph cpu2 19,50}${color1}${offset -50}${cpugraph cpu6 19,50}
+
+${color1}${font Vertigo 2 BRK:size=8}${offset 14}${color2}${cpubar cpu6 34,1}${color1}${voffset -42}
+T
+E
+N${font}${voffset -37}${if_existing /proc/net/route wlan0}
+${offset 18}TP:Wifi inside
+${offset 18}UL:${totalup wlan0}
+${offset 18}DL:${totaldown wlan0}${else}${if_existing /proc/net/route eth0}
+${offset 18}TP:Link inside
+${offset 18}UL:${totalup eth0}
+${offset 18}DL:${totaldown eth0}${else}
+${offset 18}----------------
+${offset 18} -Disconnected-
+${offset 18}----------------${endif}${endif}
+
+${color1}${font Vertigo 2 BRK:size=8}${offset 14}${color2}${cpubar cpu6 34,1}${color1}${voffset -42}
+D
+D
+H${font}${voffset -37}
+${offset 18}/root${alignr}${fs_free /}${voffset -2}
+${offset 18}${color2}${fs_bar 3,113 /}${offset -113}${color1}${cpugraph cpu6 3,113}${voffset -10}
+${offset 18}${color2}${fs_bar 3,113 /home}${offset -113}${color1}${cpugraph cpu6 3,113}${voffset -2}
+${offset 18}/home${alignr}${fs_free /home}

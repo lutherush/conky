@@ -1,0 +1,38 @@
+background no
+use_xft yes
+xftfont handelgotdlig:size=8
+xftalpha 0.8
+out_to_console no
+update_interval 1.0
+total_run_times 0
+draw_shades no
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below 
+
+border_inner_margin 0
+border_outer_margin 0
+border_width 1
+
+minimum_size 275 
+
+double_buffer yes
+default_color 61615D
+color1 ffffff
+alignment top_left
+gap_x 0
+gap_y 450
+#use_spacer right
+
+TEXT
+${image ~/.conky/laga/conky-103-bg.png -p 0,-0}   
+     Welcome ${color1}${exec whoami}${color} @ ${color1}$nodename...${color}   have fun !    
+     kernel:     ${color1}$kernel          ${color}
+     uptime:    ${color1}$uptime    ${alignr} ${color}
+     ip:           ${color1}${addr eth0}           ${color}
+     network  ${color1}down: ${downspeed wlan0}/s   up: ${upspeed wlan0}/s           ${color}
+
+
+

@@ -1,0 +1,11 @@
+Space-Conky by malbzamora: http://malbzamora.deviantart.com/
+
+1.- You need install the fonts included
+2.- Set up on the conkyrc file the correct path to "aros.lua" and "texto.lua"
+3.- Set the start.sh file to be loaded on your autostart (This depends of your distro)
+
+Thanks to wlourf for the lua/cairo scripts: http://wlourf.deviantart.com/
+
+License: GPL3
+
+Enjoy and improve it!

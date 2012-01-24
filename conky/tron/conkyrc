@@ -1,0 +1,78 @@
+# -- Conky settings -- #
+background yes
+update_interval 1.0
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+# -- Window specifications -- #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_class conky
+on_bottom yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_title bargraph2
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 300 550
+maximum_width 600
+
+alignment bottom_right
+gap_x 0
+gap_y -140
+
+# -- Graphics settings -- #
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# -- Text settings -- #
+use_xft yes
+xftfont aunchanted:size=18
+xftalpha 0.5
+
+uppercase no
+
+default_color white
+
+# -- Lua Load -- #
+# SET THE PATH TO THE SCRIPT HERE
+lua_load /home/lutherus/.conky/tron/barras.lua
+lua_draw_hook_post main_bars
+
+# +++++ CPU +++++
+template1 ${image ~/.conky/tron/1.png -p 30 -s 64x70 -f 86400}
+
+template2 ${image ~/.conky/tron/2.png -p 0,58 -s 64x70 -f 86400}
+
+template3 ${image ~/.conky/tron/3.png -p 30,117 -s 64x70 -f 86400}
+
+template4 ${image ~/.conky/tron/4.png -p 0,176 -s 64x70 -f 86400}
+
+template5 ${image ~/.conky/tron/5.png -p 30,235 -s 64x70 -f 86400}
+
+template6 ${image ~/.conky/tron/6.png -p 0,293 -s 64x70 -f 86400}
+
+#LEAVE AT LEAST ONE LINE, BLANK OR NOT AFTER TEXT
+TEXT
+${template1}${template2}${template3}${template4}${template5}${template6}
+${goto 200}${font aunchanted:size=18}${voffset 4}${cpu} %
+${goto 170}${voffset 35}${execi 4 sensors | grep -A 0 'temp2' | cut -c15-18}°C
+${goto 200}${voffset 38}${memperc} %
+${goto 200}${voffset 37}${DOWNSPEED}
+${goto 170}${voffset 36}${UPSPEED}
+${goto 25}${font tron:size=9}${color cyan}${voffset 20} 1=CPU 2=CORE 3=MEM
+${goto 25}${font tron:size=9}${color cyan}${voffset 0} 4=GPU 5=UP 6=DOWN

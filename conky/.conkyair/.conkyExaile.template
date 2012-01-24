@@ -1,0 +1,7 @@
+${color3}${image [--datatype=CA]  -s 70x70 -p 58,43}
+${color #000000}${font Verdana:style=bold:size=12}${offset 140}${voffset 18}${scroll 27 0 [--datatype=TI]}${color}
+${font Verdana:size=9}${offset 140}${voffset -3}${scroll 26 0 [--datatype=AR]}
+${font Verdana:size=11}${offset 140}${scroll 30 0 [--datatype=AL]}
+${voffset -0}${color #DDF2FF}${offset 140}${execibar 4 conkyExaile --datatype=PP --nounknownoutput}${color}
+${font Verdana:style=bold:size=9}${alignr 100}${voffset -25}[--datatype=PT]
+${color #FFEA00}${font PizzaDude Bullets:size=9}${voffset -48}${alignr 100}${exec conkyExaile --nounknownoutput --datatype=RT --ratingchar=D}${font}

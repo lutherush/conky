@@ -1,0 +1,63 @@
+ # -- Conky settings -- #
+    background no
+    update_interval 1
+
+    cpu_avg_samples 2
+    net_avg_samples 2
+
+    override_utf8_locale yes
+
+    double_buffer yes
+    no_buffers yes
+
+    text_buffer_size 2048
+    imlib_cache_size 0
+
+    # -- Window specifications -- #
+
+    own_window yes
+    own_window_type override
+    own_window_transparent yes
+    own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+    border_inner_margin 0
+    border_outer_margin 0
+
+    minimum_size 190 70
+    maximum_width 190
+    
+
+    #alignment top_left
+    alignment top_right
+    gap_x 5    #10 (top_left)
+    gap_y 122    #70 (top_left)
+
+    # -- Graphics settings -- #
+    draw_shades no
+    draw_outline no
+    draw_borders no
+    draw_graph_borders yes
+
+    # -- Text settings -- #
+    use_xft yes
+    xftfont MaiandraGD:size=24
+    xftalpha 0.4
+
+    uppercase no
+
+    default_color 8b8b8b
+    
+    color2 ffffff
+    color3 777777
+     
+TEXT
+${image ~/.conky_library/blue_sky/back_weather_white.png -p 0,0 -s 200x200}
+${voffset 50}${goto 15}${font Ubuntu:size=25}${color2}${execi 1800 conkyForecast --location=BUXX0002 -u --datatype=HT}${font Ubuntu:size=8}${color3}${execi 1800 conkyForecast --location=BUXX0002 --datatype=CT}
+${voffset -90}
+${execpi 600 conkyForecast --location=BUXX0002 --template=~/.conky_library/blue_sky/weather.template}
+${voffset -20}
+
+
+
+
+

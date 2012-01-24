@@ -1,0 +1,30 @@
+configuration of conky made with the fonts and the script of Helmuthdu (http://www.gnome-look.org/content/show.php/CONKY-colors?content=92328) 
+
+Zinn Is Not a Name
+License: GPL
+
+_________________________________________________
+
+installation (FR):
+
+avec le terminal:
+ouvrir le terminal dans conky-zinn-1core (pour les processeur mono-core), ou dans conky-zinn-2core (pour les doubles cœur).
+sh install-script-conky.sh
+puis exécuter conky
+
+sans le terminal:
+double cliquer sur install-script-conky.sh et éxécuter le script
+
+_________________________________________________
+
+installation (EN):
+
+with a terminal:
+open terminal into conky-zinn-1core (mono-core system), or conky-zinn-2core (double core system).
+sh install-script-conky.sh
+then excute conky
+
+without terminal:
+double-clic on install-script-conky.sh and execute the script
+
+

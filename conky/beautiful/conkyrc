@@ -1,0 +1,104 @@
+# Conky configuration
+# Edited by Matiastati 2010
+
+# set to yes if you want Conky to be forked in the background
+background no
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Terminus:size=9
+
+# Text alpha when using Xft
+xftalpha 0.8
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window no
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 1440 80
+maximum_width 1440
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 0
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+
+# own window options
+own_window		yes
+own_window_transparent	yes
+own_window_type		override
+own_window_hints	undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 
+gap_y 0
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase none
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer no
+
+# — Lua Load — #
+lua_load ~/.conky/beautiful/scripts/rings.lua
+lua_draw_hook_pre ring_stats
+
+TEXT
+${image ~/.conky/beautiful/scripts/conky.png -p 0,0 -s 1440x75}
+${offset 1373}${voffset -9}${font droid sans:size=10}${color #0081de}${time %H:%M}
+${offset 1163}${voffset 14}${font Santana:size=10}${color #000000}GMail  -  ${font Santana:size=12}${execi 300 python ~/.conky/beautiful/scripts/gmail.py} 
+${offset 560}${voffset -16}${font Santana:size=10}${color #000000}CPU${offset 50}${voffset 0}${font Santana:size=10}${color #000000}RAM${offset 49}${voffset 0}${font Santana:size=10}${color #000000}HDD${offset 49}${voffset 0}${font Santana:size=10}${color #000000}VOL${offset -607}
+
+

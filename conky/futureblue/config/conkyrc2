@@ -1,0 +1,75 @@
+# — Conky settings — #
+
+background yes
+
+update_interval 1
+total_run_times 0
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+temperature_unit celcius
+
+# — Window specifications — #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 200 130
+maximum_width 200
+
+alignment top_right
+
+gap_x 10
+gap_y 240
+
+
+# — Graphics settings — #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# — Text settings — #
+use_xft yes
+xftfont Future:size=8
+xftalpha 0.1
+
+default_color D4ECF4
+default_gauge_size 50 25
+
+uppercase no
+use_spacer right
+
+color0 white
+color1 orange
+color2 green
+
+# — Lua Load — #
+
+lua_load ~/.conky/futureblue/scripts/rings.lua
+lua_draw_hook_pre main_rings
+
+TEXT
+${image ~/.conky/futureblue/pix/bg2.png -p 1,1 -s 200x130}
+${voffset -3}${goto 15}${font Future:size=10}CPU - MEMORY - NETWORK ${font}
+${voffset 4}${goto 137}${cpugraph 26,52 FF0000 FFFF00}
+${voffset -35}${goto 96}${memmax}
+${voffset 6}${goto 96}${swapmax}
+${voffset 6}${goto 96}${swap}
+${voffset 9}${goto 35}${downspeed wlan0}${voffset -6}${goto 75}${downspeedgraph wlan0 12,56 FF0000 FFFF00}
+${voffset 12}${goto 35}${upspeed wlan0}${voffset -6}${goto 75}${upspeedgraph wlan0 12,56 00FF00 FFFF00}
+${voffset -37}${goto 29}RAM
+${voffset 21}${goto 155}CPU
+

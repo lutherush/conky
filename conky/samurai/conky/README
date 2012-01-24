@@ -1,0 +1,15 @@
+Hi this one have an easy setup 
+1.-copy conky folder to your home like this /home/you/conky
+2.- copy and paste "aptup"  in /etc/cron.hourly/
+	sudo cp $HOME/conky/aptud /etc/cron.hourly
+2(a).- make it executable 
+ 	$ sudo chmod +x /etc/cron.hourly/aptup
+2(b).-  restart cron 
+	$ sudo /etc/init.d/cron restart
+3.-make executable "conky-updates.pl" it's in /openbox/scripts/
+	$ chmod $HOME/conky/openbox/scripts/conky-updates.pl
+4.-copy the font to ~/.fonts and update your cache
+	$ sudo fc-cache -fv
+5.-make executable "start" file and execute it 
+6.- enjoy XD
+optional If you use tint2 copy  "tint2rc" to ~/.config/tint2

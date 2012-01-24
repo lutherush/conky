@@ -1,0 +1,48 @@
+author http://slavsan.deviantart.com/
+Hello there. Thanks for using my config. I've used some stuff which are not particularly mine - the calendar.sh and the conkyEmail.py and
+conkyRhythmbox.py taken from conkycolors.
+
+Starting this config is made very easy.
+The things you have to do are:
+
+1) unpack the .tar file, and placing all the files from the folder into ~/.conky_library/blue_sky/   (Ofcourse you may edit this but you'll
+also have to edit all the files for it to work) and copy the conky.sh to your home folder (in my case this file is also hidden 
+i.e. ".conky.sh"). You have to start conky from this conky.sh file which executes all the files from the .conky_library/blue_sky/ folder.
+
+2) You'll have to make the conkyRhythmbox.py and all the ".sh" files executable. 
+
+3) You'll have to edit the files conkyrc1 and mail by replacing the "YOUR USERNAME" and "YOUR PASSWORD" lines with your own username and 
+password. 
+
+4) You'll have to edit conky_weather to match your location 
+
+5) The empty_line file can be disabled from conky.sh. I personally use it to hide the names of some files and launchers leaving only icons
+on my desktops. :)
+
+6) To use the last.fm conky you'll have to edit the lines where it says "slavsan" (my user name) with yours. No passwords are needet to be
+entered. NB! You'll need w3m to use this conky, so if you don'y have it install it.
+
+7) The quote conky is made optional. If you want to see famous quotes on your desk enable it in conky.sh. I use it from time to time.
+
+8) If you use a light wallpaper you can change the images from the conky_weather, mail and lastfm conkys with their alternatives by just 
+replacing the word "white" with "black" in the specified path to the image. 
+
+So much for the conky 
+
+The screenlets Notes themes are in the folder screenlet Notes. Just copy the 2 folders from there and place them in 
+/usr/share/screenlets/Notes/themes (if you're with Ubuntu) or wherever your screenlets themes are stored. You might have to change 
+permissions of the files for them to work. 
+
+My tint2 config is stored in the tint2 folder. (Can't get more simple than that)
+
+And finally the covergloobus theme is stored in ... oh no... the covergloobus folder. One catch tho... I'm not using the covergloobus from
+the repos nor the ppa but the one with the progress bar (from the bzr branch). More details for downloading it 
+here http://www.omgubuntu.co.uk/2010/11/covergloobus-adds-timer-progress-bar-support/
+The theme is named Bitmap2 because it's a mod of the original Bitmap theme. You could name it anyway you want ofcourse.
+
+Oh.. and also I use the trash screenlet with these images http://slavsan.deviantart.com/favourites/#/dm3s7m
+Just make your own theme or for this screenlet by using some trash icon you like.
+
+You also need to have the ubuntu font family installed, or just use your own font of choice.
+
+Cheers.

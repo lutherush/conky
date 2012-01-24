@@ -1,0 +1,44 @@
+use_xft yes
+xftfont Verdana:size=10
+default_bar_size 100 5
+update_interval 1
+
+total_run_times 0
+double_buffer yes
+text_buffer_size 2048
+
+own_window yes
+own_window_colour 3D3D3D
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 500 220
+maximum_high 10
+
+
+default_color DDF2FF
+draw_borders no
+border_margin 10
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+color0 E6E6E6
+color1 A7CC5C
+color2 E6E6E6
+
+alignment bottom_right
+gap_x -80
+gap_y 0
+
+
+
+override_utf8_locale yes
+
+no_buffers yes
+
+TEXT
+${image ./pix/bigpanel2.png  -s 406x213 -p 5,5}${font Sawasdee:style=bold:size=30}${alignc 50}${voffset 10}${time %a. %d %b %H:%M}${font}
+${voffset 5}${alignc 50}_____________________________________________
+${voffset 15}${offset 50}${execp conkyForecast -t  ~/.conkyair/conkyForecast.template}

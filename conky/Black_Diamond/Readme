@@ -1,0 +1,14 @@
+requirements:
+Conky 1.7.1.1 compiled with Imlib2 (use http://www.getdeb.net/app/Conky)
+conkyforecat
+conkyExaile
+Dual Core (if you have single core you have to edit .conkycpu)
+wlan0
+
+install:
+unzip .ccr_black_diamond in the home folder
+
+run:
+~/.ccr_black_diamond/conkys
+
+

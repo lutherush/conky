@@ -1,0 +1,5 @@
+${image [--datatype=WI] -p 10,15 -s 100x100} 
+#${image [--datatype=WI --startday=1] -p 30,195 -s 60x60}
+#${image [--datatype=WI --startday=2] -p 95,195 -s 60x60}
+#${image [--datatype=WI --startday=3] -p 165,195 -s 60x60}
+#${image [--datatype=WI --startday=4] -p 230,195 -s 60x60}  

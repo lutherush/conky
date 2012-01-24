@@ -1,0 +1,60 @@
+# -- Conky settings -- #
+background no
+update_interval 1
+ 
+cpu_avg_samples 2
+net_avg_samples 2
+ 
+override_utf8_locale yes
+ 
+double_buffer yes
+no_buffers yes
+ 
+text_buffer_size 2048
+imlib_cache_size 0
+ 
+# -- Window specifications -- #
+ 
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size 200 700
+maximum_width 1000
+ 
+alignment tr
+gap_x 0
+gap_y 0
+ 
+# -- Graphics settings -- #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+ 
+# -- Text settings -- #
+use_xft yes
+xftfont Urw Chancery L:size=24
+xftalpha 0.8
+ 
+uppercase no
+ 
+default_color 000000
+ 
+# -- Lua Load -- # #here  you change the directory where you put the script#
+lua_load ~/.conky/conky_rings/openbox.lua
+lua_draw_hook_pre ring_stats
+ 
+TEXT
+${voffset 25}${font Urw Chancery L:size=25}${goto 75}${time %H:%M}
+${voffset 40}${font Urw Chancery L:size=15}${goto 50}${memperc}% $mem/$memmax
+${voffset 50}${font Urw Chancery L:size=15}${goto 120}${cpu cpu0}%
+${voffset 55}${font Urw Chancery L:size=15}${goto 75}$battery
+${voffset 55}${font Urw Chancery L:size=15}${goto 45}${fs_used /home}/${fs_size /home}  ${fs_used_perc /home}%
+
+
+

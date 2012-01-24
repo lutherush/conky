@@ -1,0 +1,89 @@
+
+# Use Xft?
+use_xft yes
+xftfont cure:size=6
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window  yes
+own_window_transparent no
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+#minimum_size 280 5
+
+maximum_width 87
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders yes
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 6
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color 303030
+#default_shade_color white
+#default_outline_color black
+own_window_colour 262626
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+#alignment bottom_left
+alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 20
+gap_y 305
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer yes
+
+TEXT
+${color 776241}Disk IO:${color 707070} ${alignr 4}$diskio
+${color 3E3629}${diskiograph 20,85 3E3629 776241}
+${color 776241}Root:  ${color 707070}${alignr 4}${fs_free /}
+${color 3E3629}${fs_bar 3,85 /}
+${color 776241}Home:  ${color 707070}${alignr 4}${fs_free /home}
+${color 3E3629}${fs_bar 3,85 /home}

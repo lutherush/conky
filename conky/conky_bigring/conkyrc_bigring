@@ -1,0 +1,76 @@
+# — Conky settings — #
+#background yes
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 1024
+imlib_cache_size 0
+
+# — Window specifications — #
+
+own_window yes
+#own_window_type override#
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 800 800
+maximum_width 800
+
+alignment top_middle
+gap_x 1
+gap_y 50
+
+# — Graphics settings — #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# — Text settings — #
+use_xft yes
+xftfont Droid Sans:size=10
+xftalpha 0.5
+
+uppercase no
+
+default_color 3E3E3E
+color1 D23000
+
+# — Lua Load — #
+lua_load ~/.conky/big_ring.lua
+lua_draw_hook_pre clock_rings
+
+TEXT
+${voffset 8}${color 3399FF}${font Droid Sans:size=16}${time %A}${font}${voffset -8}${color FFFFFF}${font Droid Sans:size=32}${time %e}${font}
+${color FFFFFF}${voffset -30}${color 3399FF}${font Droid Sans:size=18}${time %b}${font}${voffset -3} ${color FFFFFF}${font Droid Sans:size=20}${time %Y}${font}${color 3399FF}${hr}
+${voffset 5}${font Zarautz:size=16}${time %H:%M:%S}${voffset 5}${font Droid Sans:size=10}${alignr}muzieca${font}
+${font Droid Sans:size=12}${color FFFFFF}${alignr}${acpitemp}°C${font}
+${color 3399FF}${voffset 6}${alignr}${sysname} ${kernel} ${machine}
+${alignr}Uptime:${color FFFFFF}$uptime_short
+${color FFFFFF}${goto 235}${voffset 135}${cpu cpu0}%
+${color 3399FF}${goto 232}CPU
+${color FFFFFF}${goto 540}${voffset -30}${memperc}%
+${color 3399FF}${goto 540}RAM
+${color FFFFFF}${goto 255}${voffset -230}${swapperc}%
+${color 3399FF}${goto 245}SWAP
+${color FFFFFF}${goto 390}${voffset 50}${fs_used_perc /}%
+${color 3399FF}${goto 388}Root
+${color FFFFFF}${goto 305}${voffset 355}${upspeed ppp0}
+${color 3399FF}${goto 305}Up
+${color FFFFFF}${goto 510}${voffset 75}${downspeed ppp0}
+${color 3399FF}${goto 503}Down
+${color FFFFFF}${goto 50}${voffset -170}${fs_used_perc /media/DATA01}%
+${color 3399FF}${goto 43}Data01
+${color FFFFFF}${goto 720}${voffset -33}${fs_used_perc /media/DATA02}%
+${color 3399FF}${goto 712}Data02

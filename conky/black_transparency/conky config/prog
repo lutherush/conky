@@ -1,0 +1,60 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Droid Sans:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_type override #override, default, conky, root
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_colour 000000
+
+#alignment bottom_left
+#alignment top_left
+alignment bottom_left
+gap_x  20  #660  #0      #0    #1115  #-95  #1115  #195  # 25 default
+gap_y  82  #5  #32   #29   #870  #870   #870    #40  # 40 default
+minimum_size 120 33
+maximum_width 120
+
+
+default_bar_size 160 3
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_graph_borders no
+draw_execbar_borders no
+
+default_color F3F3F3 #212526
+
+
+color2  ffffff #FFFFFF #1E1C1A
+color3  777777 #ffffff   #239cd5   #2597cd
+
+TEXT
+${color3}${font Ubuntu:size=7}${top name 1}${font Ubuntu:size=7} ${color2}${goto 70} ${top cpu 1} ${top mem 1}
+${color3}${font Ubuntu:size=7}${top name 2}${color}${font Ubuntu:size=7}${color2} ${goto 70} ${top cpu 2} ${top mem 2}
+${color3}${font Ubuntu:size=7}${top name 3}${color}${font Ubuntu:size=7}${color2} ${goto 70} ${top cpu 3} ${top mem 3}
+${color3}${font Ubuntu:size=7}${top name 4}${color}${font Ubuntu:size=7}${color2} ${goto 70} ${top cpu 4} ${top mem 4}
+#

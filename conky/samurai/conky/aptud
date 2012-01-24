@@ -1,0 +1,3 @@
+#!/bin/bash
+#this will run aptitude update hourly
+aptitude update

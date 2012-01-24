@@ -1,0 +1,51 @@
+use_xft yes
+xftfont Verdana:style=bold:size=10
+default_bar_size 330 5
+update_interval 1
+
+total_run_times 0
+double_buffer yes
+text_buffer_size 2048
+
+own_window yes
+own_window_colour 3D3D3D
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 450 300
+
+
+default_color DDF2FF
+draw_borders no
+border_margin 10
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+
+color0 E6E6E6
+color1 A7CC5C
+color2 E6E6E6
+
+alignment top_right
+gap_x -10
+gap_y 60
+
+
+
+override_utf8_locale yes
+
+no_buffers yes
+
+TEXT
+
+${image ./pix/bigpanel.png  -s 408x279 -p 20,-1}${offset 50}Cpu1:${color DDF2FF} ${offset 3}${cpu cpu1}%${alignr 70}${voffset -5}${color #DBDBDB}${cpugraph cpu1 20,240 f1f1f1 DBDBDB}${color}
+${voffset -3}${offset 50}CPU Step: ${alignr 70}${color DDF2FF}${freq_g} GHz${color}
+${voffset 12}${offset 50}Cpu2:${color DDF2FF} ${offset 3}${cpu cpu2}%${alignr 70}${voffset -9}${color #DDF2FF}${cpugraph cpu2 20,240 f1f1f1 DBDBDB}${color}
+${voffset -5}${alignc 10}________________________________________
+${voffset 15}${offset 50}RAM: ${alignr 70} $mem/${color #DDF2FF}$memmax${color}
+${offset 50}${color #DDF2FF}${membar}${color}
+${offset 50}Swap: ${alignr 70} $swap / ${color #DDF2FF}$swapmax${color}
+${offset 50}${color #DDF2FF}${swapbar}${color}
+${offset 50}ROOT:${color #DDF2FF} ${alignr 70} ${fs_free /} / ${fs_size /}
+${offset 50}${fs_bar /}${color}

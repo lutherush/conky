@@ -1,0 +1,21 @@
+1 Copia el contenido de la carpeta script en la carpeta .scripts en tu home. si  esta no existe creala.
+
+2 Mueve el archivo conkyrc a tu home.
+
+3 Renombralo a .conkyrc
+
+4 Mueve tin2rc a /.config/tint2 en tu home
+
+5 Copia el contenido de la carpeta font en la carpeta .font en tu home. 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1 Copy the contents of the script folder in the folder. Scripts in your home. if it does not exist create it.
+
+2 Move the conkyrc file to your home.
+
+3 Rename it to. Conkyrc
+
+4 Move tin2rc a / .config/tint2 in your home
+
+5 Copy the contents of the font folder in the folder. Font in your home.

@@ -1,0 +1,122 @@
+background yes
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont A.D.Mono:size=10
+
+# Text alpha when using Xft
+xftalpha 1
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 270 400
+maximum_width 270
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+#border_margin 0
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color black
+default_shade_color black
+default_outline_color white
+
+# own window options
+own_window		yes
+own_window_transparent	yes
+own_window_type desktop
+own_window_hints	undecorated,below,sticky,skip_taskbar,skip_pager
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+#alignment bottom_middle
+#alignment top_middle
+#alignment middle_left
+#alignment middle_middle
+#alignment middle_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 10	
+gap_y 40
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 1
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 1
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Kolory
+color1 000000
+color2 FFFFFF
+color3	ABABAB
+color4 313131
+default_shade_color CACACA 
+default_outline_color bbbbbb
+default_color bfbfbf		
+use_spacer left
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+
+
+# -- Lua Load & mpd-- #
+mpd_host localhost
+mpd_port 6600
+imlib_cache_size 0
+#lua_load $HOME/conky/openbox/anillos.lua
+#lua_draw_hook_pre widgets
+TEXT
+${color1}Cpu =${goto 60} ${color3}${cpu cpu1}% ${color4}${goto 95}/ ${color3}${cpu cpu2}%
+${color1}Ram =${goto 60} ${color3}${memperc}%
+${color1}Swap =${goto 60} ${color3}${swapperc}% 
+${color1}Wifi =${goto 50} ${color3}${wireless_link_qual_perc wlan0}% 
+${color1}Bat =${goto 60} ${color3}${battery_percent BAT0}%
+${color1}Apt-Upd =${goto 90}${color3}${execi 4200 perl $HOME/conky/openbox/scripts/conky-updates.pl}
+${if_mpd_playing}${color1}MPD ${color3}${hr}
+${mpd_status} 
+${mpd_artist} 
+${mpd_title}
+${mpd_album}
+${mpd_bar 2,150} ${mpd_elapsed} / ${mpd_length}
+${hr}
+${else}${color3}${hr}
+${endif}

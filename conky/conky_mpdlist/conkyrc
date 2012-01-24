@@ -1,0 +1,41 @@
+alignment top left
+background yes
+border_width 1
+double_buffer yes
+default_color CCF352
+draw_borders no
+draw_graph_borders yes
+draw_shades no
+use_xft yes
+override_utf8_locale yes
+xftfont lime
+gap_x 20
+gap_y 10
+own_window yes
+own_window_class Conky
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+maximum_width 300
+minimum_size 260 100
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+update_interval 1
+uppercase no
+pad_percents 0
+short_units yes
+override_utf8_locale yes
+text_buffer_size 1024
+color0 FFFFFF
+color1 CCF352
+color2 526514
+TEXT
+
+
+
+${color0}${font mintsstrong}PLAYLIST${if_mpd_playing} ${color}${mpd_smart 40}${color0}${endif}$font
+${voffset -5}$hr
+${execpi 5 ~/.conky/conky_mpdlist/conkyplaylist}
+
+

@@ -1,0 +1,62 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Droid Sans:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_type override #override, default, conky, root
+own_window_class Conky
+own_window yes
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_colour 000000
+
+#alignment bottom_left
+alignment top_right
+#alignment top_left
+gap_x  10  #660  #0      #0    #1115  #-95  #1115  #195  # 25 default
+gap_y  431  #5  #32   #29   #870  #870   #870    #40  # 40 default
+minimum_size 185 190
+maximum_width 185
+
+
+default_bar_size 160 4
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+draw_graph_borders no
+draw_execbar_borders no
+
+default_color 777777 #212526
+
+color0  FFFFFF #1E1C1A
+color1  FFFFFF #1E1C1A
+color2  ffffff #FFFFFF #1E1C1A
+color3  777777 #ffffff   #239cd5   #2597cd
+
+TEXT
+${image ~/.conky_library/blue_sky/back_lastfm_white.png -p 0,0 -s 200x200}
+${voffset 30}
+${goto 19}${font Ubuntu:size=8}${color3}Similar artists to ${color2}${font Ubuntu:size=8}${execpi 10 curl --silent http://ws.audioscrobbler.com/1.0/user/slavsan/recenttracks.xml | grep -n artist | sed -n '1p' | sed 's/<[^>]*[>]//g' | sed 's/4:            //g'}${font Ubuntu:size=8:style=regular}${color3}:
+# similar artists
+${voffset 5}${goto 16}${font Ubuntu:size=8}${color2}${execi 10 ~/.conky_library/blue_sky/lastfm.sh}
+${voffset -20}

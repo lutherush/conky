@@ -1,0 +1,73 @@
+# — Conky settings — #
+
+background yes
+
+update_interval 1
+total_run_times 0
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+temperature_unit celcius
+
+# — Window specifications — #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 200 130
+maximum_width 200
+
+alignment top_right
+
+gap_x 10
+gap_y 380
+
+
+# — Graphics settings — #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# — Text settings — #
+use_xft yes
+xftfont Future:size=8
+xftalpha 0.1
+
+default_color D4ECF4
+default_gauge_size 47 25
+
+uppercase no
+use_spacer right
+
+color0 white
+color1 orange
+color2 green
+
+# — Lua Load — #
+
+lua_load ~/.conky/futureblue/scripts/rings2.lua
+lua_draw_hook_pre main_rings
+
+TEXT
+${image ~/.conky/futureblue/pix/bg3.png -p 1,1 -s 200x130}
+${voffset -3}${goto 15}${font Future:size=10}HDD - WLAN - VOLUME ${font}
+${voffset 28}${goto 36}/${goto 161}h
+${voffset -33}${goto 90}${fs_size}
+${voffset 6}${goto 90}${fs_free}
+${voffset 6}${goto 90}${fs_free_perc}%
+${voffset 16}${goto 15}Wireless${goto 151}Volume
+
+

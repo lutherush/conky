@@ -1,0 +1,29 @@
+hi, and thanks for dowloaded my setup.
+most of the credit goes to londonali1010 for the lua script
+
+so, howto:
+
+-conkyfusionrc is the conky config file to put in your ~/.conkyrc
+he calls the fusion_rings.lua script.
+
+-fusion_rings.lua goes where you want 
+but take care to adjust the path in your conkyrc file (just before TEXT, line 52-53)
+
+-conky_hot.sh & conky_hoy_mini.sh are the scripts pointing in your thumbnail folder, they are called by conkyrc
+
+-gmail.py goes where you want and has to be edit for username & password
+but take care to adjust the path in your conkyrc file (line 59)
+
+-thb-round-shdw-pptv-256.phatch is the actionlist script: if you want your thumbnails in perspective, install 'phatch' from repositories , take a look at the website ( http://photobatch.stani.be/ ) to know how to work with this apps, and then, open thb-round-shdw-pptv-256.phatch with phatch to turn your thumbnails the way i did for my setup. the thumbnails folder is called by conky_hot.sh & conky_hot_mini.sh.
+
+-wallpapers from lingerie'adds mod by me
+
+-fonts goes to your ~/.fonts folder or in /usr/share/fonts. don't forget to reload font cache with a 'sudo fc-cache -f -v' in a terminal.
+
+todo:
+-adjust the conky variables in the lua script to fit your needs, script is explicit, just edit it and modify as you want.
+-adjust path in the conky_hot & conky_hot_mini to point to your thumbnail folder
+
+don't hesitate to mail me if you need to .<arplinuxnet@gmail.com> or contact me on my devart page <http://arpinux.deviantart.com/
+
+enjoy :)

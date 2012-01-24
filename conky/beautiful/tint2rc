@@ -1,0 +1,99 @@
+#---------------------------------------------
+# TINT2 CONFIG FILE
+#---------------------------------------------
+
+#---------------------------------------------
+# BACKGROUND AND BORDER
+#---------------------------------------------
+rounded = 0 #REDONDEAR ESQUINAS
+border_width = 4 #TAMAÑO DEL BORDE HASTA LA VARRA DE TAREAS
+background_color = #0b0c0e 100 #COLOR Y OPACIDAD DEL FONDO
+border_color =  #0b0c0e 100 #COLOR Y OPACIDAD DEL BORDE
+
+rounded = 3 #PARA APLICACIONES ACTIVAS
+border_width = 0
+background_color = #1d1e20 100
+border_color = #00ff18 100
+
+rounded = 3 #PARA APLICACIONES INACTIVAS
+border_width = 0
+background_color = #1d1e20 100
+border_color = #7301ff 100
+
+#---------------------------------------------
+# PANEL
+#---------------------------------------------
+#value for vertical_position : bottom, top, center
+#value for horizontal_position : left, right, center
+#value for orientation : horizontal, vertical
+panel_monitor = all
+panel_position = top center
+panel_size = 80% 28
+panel_margin = 0 0
+panel_padding = 20 0
+font_shadow = 0
+panel_background_id = 1
+wm_menu = 0
+
+#---------------------------------------------
+# TASKBAR
+#---------------------------------------------
+#taskbar_mode = multi_desktop
+taskbar_mode = single_desktop
+taskbar_padding = 2 3 10
+taskbar_background_id = 0
+
+#---------------------------------------------
+# TASKS
+#---------------------------------------------
+task_icon = 0
+task_text = 1
+task_width = 140
+task_centered = 1
+task_padding = 6 3
+task_font = droid sans 8
+task_font_color = #69767c 100
+task_active_font_color = #009fc1 100
+task_background_id = 3
+task_active_background_id = 2
+
+#---------------------------------------------
+# SYSTRAYBAR
+#---------------------------------------------
+systray_padding = 0 4 5
+systray_background_id = 0
+
+#---------------------------------------------
+# CLOCK
+#---------------------------------------------
+#time1_format = %H:%M
+#time1_font = sans 8
+#time2_format = %A %d %B
+#time2_font = sans 6
+#clock_font_color = #ffffff 76
+#clock_padding = 1 0
+#clock_background_id = 0
+#clock_lclick_command = xclock
+#clock_rclick_command = orage
+
+#---------------------------------------------
+# BATTERY
+#---------------------------------------------
+battery = 0
+battery_low_status = 10
+battery_low_cmd = notify-send "battery low"
+bat1_font = sans 8
+bat2_font = sans 6
+battery_font_color = #ffffff 76
+battery_padding = 1 0
+battery_background_id = 0
+
+
+#---------------------------------------------
+# MOUSE ACTION ON TASK
+#---------------------------------------------
+mouse_middle = none
+mouse_right = close
+mouse_scroll_up = toggle
+mouse_scroll_down = iconify
+

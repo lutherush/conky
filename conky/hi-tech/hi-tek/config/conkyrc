@@ -1,0 +1,76 @@
+# — Conky settings — #
+
+background yes
+
+update_interval 1
+total_run_times 0
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+imlib_cache_size 0
+
+temperature_unit celcius
+
+# — Window specifications — #
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 116 684
+maximum_width 116
+
+alignment top_left
+
+gap_x 10
+gap_y 50
+
+
+# — Graphics settings — #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# — Text settings — #
+use_xft yes
+xftfont hooge 05_53:size=6
+xftalpha 0.1
+
+default_color C0C0C0
+default_gauge_size 47 25
+
+uppercase no
+use_spacer right
+
+color0 white
+color1 orange
+color2 green
+
+# — Lua Load — #
+
+lua_load ~/.conky/hi-tech/hi-tek/scripts/rings.lua
+lua_load ~/.conky/hi-tech/hi-tek/scripts/bargraph.lua
+lua_draw_hook_pre main_rings
+lua_draw_hook_post main_bars
+
+
+TEXT
+${image ~/.conky/hi-tech/hi-tek/pix/bg_black.png -p 1,1 -s 116x684}
+${voffset 114}${alignc}CPU:${cpu cpu0}%
+${voffset -1}${goto 30}${cpugraph 22,58 FF0000 FFFF00}
+${voffset -1}${alignc}RAM:${memperc}%
+${voffset 118}${alignc}NET:
+${voffset 2}${goto 42}IN: ${downspeed wlan0}
+${voffset 2}${goto 32}OUT: ${upspeed wlan0}
+${voffset 2}${goto 34}WLAN:${wireless_link_qual wlan0}%
+${voffset 9}${alignc}HDD:${fs_used_perc /}%
